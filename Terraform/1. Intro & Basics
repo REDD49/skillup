@@ -1,1 +1,80 @@
 
+
+
+
+
+Terraform workFlow & Basic commands
+
+Terraform workflow
+ init --> validate --> plan --> apply --> destroy
+
+Basic Commands
+ terraform init --> terraform validate --> terraform plan --> terraform apply --> terraform destroy
+ 
+choose a location to provision your infra
+az account list-locations -o table
+
+# Azure CLI Login
+az login
+
+# List Subscriptions
+az account list
+
+# Set Specific Subscription (if we have multiple subscriptions)
+az account set --subscription="SUBSCRIPTION_ID"
+
+Register Terraform azure provider
+https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs
+
+https://registry.terraform.io/providers/hashicorp/azurerm/latest
+
+Terrafrom azure resources provider docs
+Ex:
+https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/resource_group
+
+terraform.tf state file has all the metadata information of all the provisioned resources of the files
+after terraform apply - .tf state file will be created 
+
+after terrafrom destroy - .tf state metadata file the resource data will be deleted
+terraform.tfstate.backup will be created, before destroying the resources then will destrpy the resources
+
+-----------------
+
+Language Basics
+
+all the files name will be **.tf extensions. 
+json based files will **.tf.json extensions.
+
+we call the terraform files .tf config files (or) terraform configuration files (or) terraform manifests.
+
+configuration syntaxs in Terraform
+   HCL - Hashicorp Language --> Terraform --> 1,2,3,4
+   
+   1. Blocks
+   2. Arguments
+   3. Identifiers
+   4. Comments
+ 
+ Arguments - Ex: name, locations.
+ 
+ atributes - Ex: id's (once the resource is created, id will be generated. that can be exported)
+ 
+ comments -- # this is comment  - single line comment
+             // this is comment - single line comment
+             /*
+             multi line comments
+             line 1
+             line 2
+             */
+             
+ Terrafrom Top-Level Blocks (3)
+ 
+ 1. Fundamental Blocks - terraform block, providers block, resources block
+ 
+ 2. Variable Blocks - input variable block, output values block, local values block
+ 
+ 3. Calling / Referencing Blocks - Data sources block, modules block
+ 
+ 
+ 
+ 
