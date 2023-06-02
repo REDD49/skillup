@@ -32,11 +32,32 @@ Terrafrom azure resources provider docs
 Ex:
 https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/resource_group
 
+1. Terraform init
+
+it will create a .terraform directory & .terraform.lock.hcl files
+
+in .terraform directory structure --> .terraform --> providers --> registry.teraform.io --> hashicorp --> azurerm --> Ex: (3.59.0) --> windows_amd64 --> terraform provider.exe file
+
+2. Terraform validate
+ it will validate all the syntaxs in the .tf files
+ 
+3. Terraform plan
+
+cmd: terraform plan -out resource_group.tfplan
+
+resource_group.tfplan file will be generated, with the proper actions to performed in the file & will save the plan file
+
+4. terraform apply
+
+it will create the resources mentioned in .tf file
+
 terraform.tf state file has all the metadata information of all the provisioned resources of the files
-after terraform apply - .tf state file will be created 
+after terraform apply was successful. - terraform.tfstate file will be created (it will have info. of created resources in that file)
+
+5. terraform destroy
 
 after terrafrom destroy - .tf state metadata file the resource data will be deleted
-terraform.tfstate.backup will be created, before destroying the resources then will destrpy the resources
+terraform.tfstate.backup will be created, before destroying the resources. then will destrpy the resources
 
 -----------------
 
